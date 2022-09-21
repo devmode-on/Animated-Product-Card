@@ -1,0 +1,209 @@
+/* ------------ GOOGLE FONTS ------------ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ------------ VARIABLES ------------ */
+:root{
+  /* FONT */
+  --font: 'Poppins', sans-serif;
+
+  /* COLORS */
+  --bg-color-option1: #b4ec32;
+  --bg-color-option2: #d4bbf7;
+  --circle1-color : #00436a;
+  --circle2-color : #9016f4;
+  --text-color: #292c2d;
+  --white-color: #fff;
+}
+
+/* ------------ BASE ------------ */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+img{
+  width: 100%;
+}
+
+body{
+  font-family: var(--font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ------------ CARD ----------- */
+.card{
+  width: 30em;
+  height: 40em;
+  background-color: var(--bg-color-option1);
+  border-radius: 2em;
+  box-shadow: 0 1em 1em rgba(0,0,0, .2);
+  color: var(--text-color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+}
+
+.card__img-container{
+  width: 20em;
+  position: absolute;
+  top: 0;
+
+  transform: rotate(40deg);
+}
+
+.card__info{
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: 50%;
+  padding: 0 2em;
+
+  overflow: hidden;
+}
+
+.card__title{
+  font-size: 2.5rem;
+  margin-bottom: .3em;
+}
+
+.card__price{
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(255,255,255, .7);
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: .3em;
+  border-radius: 1em;
+  margin: .5em 1em;
+}
+
+.card__description{
+  font-size: 1.2rem;
+  text-align: justify;
+  margin-bottom: 0.8em;
+}
+
+.card__product-details{
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__sizes,
+.card__colors{
+  margin-bottom: .5em;
+}
+
+.card__sizes span,
+.card__colors span{
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+
+.card__size{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 1.8em;
+  height: 1.8em;
+  background-color: var(--white-color);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 .4em;
+  border-radius: .2em;
+  cursor: pointer;
+}
+
+.card__size:hover{
+  background-color: var(--text-color);
+  color: var(--white-color);
+}
+
+.card__color{
+  display: inline-block;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  margin: 0 .5em;
+  cursor: pointer;
+}
+
+.card__color:hover{
+  border: 4px solid var(--white-color);
+}
+
+.card__color--option1{
+  background-color: var(--circle1-color);
+}
+
+.card__color--option2{
+  background-color: var(--circle2-color);
+}
+
+.card__btn{
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 8em;
+  height: 3em;
+  background-color: var(--white-color);
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  align-self: center;
+}
+
+.card__btn a{
+  color: var(--text-color);
+}
+
+.card__btn:hover{
+  transform: scale(1.1);
+}
+
+/* --------- CARD HOVER ------------- */
+.card__img-container,
+.card__info{
+  transition: .5s ease;
+}
+
+.card__price,
+.card__product-details,
+.card__size,
+.card__btn{
+  transition: .3s ease;
+}
+
+.card:hover .card__img-container{
+  transform: rotate(15deg);
+  top: -8em;
+}
+
+.card:hover .card__info{
+  height: 70%;
+}
+
+.card:hover .card__price{
+  opacity: 1;
+}
+
+.card:hover .card__description{
+  font-size: 1.1rem;
+}
+
+.card:hover .card__product-details{
+  opacity: 1;
+}
